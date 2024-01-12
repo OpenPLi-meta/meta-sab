@@ -3,12 +3,12 @@ SECTION = "base"
 PRIORITY = "optional"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
-RDEPENDS_${PN} += "libxml2"
+RDEPENDS:${PN} += "libxml2"
 
 LICENSE = "CLOSED"
 
 PROVIDES += "virtual/blindscan-dvbc"
-RPROVIDES_${PN} += "virtual/blindscan-dvbc"
+RPROVIDES:${PN} += "virtual/blindscan-dvbc"
 
 SRC_URI = "http://source.mynonpublic.com/broadmedia/broadmedia-dvbc-blindscan-1.1.zip"
 
