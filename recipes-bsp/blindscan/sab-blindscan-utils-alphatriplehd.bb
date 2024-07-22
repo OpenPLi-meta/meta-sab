@@ -8,7 +8,7 @@ RDEPENDS:${PN} += "libxml2"
 LICENSE = "CLOSED"
 
 PROVIDES += "virtual/blindscan-dvbc"
-RPROVIDES:${PN} += "virtual/blindscan-dvbc"
+RPROVIDES:${PN} += "virtual-blindscan-dvbc"
 
 SRC_URI = "http://source.mynonpublic.com/broadmedia/broadmedia-dvbc-blindscan-1.1.zip"
 
