@@ -13,7 +13,7 @@ SRC_URI[sha256sum] = "49c3b7d053fa23cd59ce5f38a7c5db9b0e873dcbf39fe5e8ae05600339
 PV = "${KV}+${SRCDATE}"
 PR = "r0"
 
-SRC_URI = "https://source.mynonpublic.com/broadmedia/alphatriple-drivers-${KV}-${GCCREV}-${SRCDATE}.zip"
+SRC_URI = "http://downloads.openpli.org/archive/sab/alphatriple-drivers-${KV}-${GCCREV}-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 

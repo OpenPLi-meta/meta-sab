@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}/COPYING;md5=d7810fab7487fb0aad
 
 RPROVIDES:kernel-image = "kernel-${KERNEL_IMAGETYPE}"
 
-SRC_URI += "http://source.mynonpublic.com/broadmedia/broadmedia-linux-${PV}-${SRC}.tar.xz \
+SRC_URI += "http://downloads.openpli.org/archive/sab/broadmedia-linux-${PV}-${SRC}.tar.xz \
     file://defconfig \
     file://kernel-add-support-for-gcc6.patch \
     file://kernel-add-support-for-gcc7.patch \
