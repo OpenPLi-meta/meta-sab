@@ -10,7 +10,7 @@ LICENSE = "CLOSED"
 PROVIDES += "virtual/blindscan-dvbc"
 RPROVIDES_${PN} += "virtual/blindscan-dvbc"
 
-SRC_URI = "http://source.mynonpublic.com/broadmedia/broadmedia-dvbc-blindscan-1.1.zip"
+SRC_URI = "http://downloads.openpli.org/archive/sab/broadmedia-dvbc-blindscan-1.1.zip"
 
 PV = "1.0"
 PR = "r0"

@@ -4,16 +4,16 @@ PRIORITY = "required"
 LICENSE = "CLOSED"
 
 KV = "4.1.24"
-GCCREV = "4.9.1"
-SRCDATE = "20170508"
+GCCREV = "6.3.0"
+SRCDATE = "20170614"
 
-SRC_URI[md5sum] = "3a10e7abbd0228cadb0b189aa5a94b32"
-SRC_URI[sha256sum] = "6ada5de766887a245c0f3fcf1031112628fcee40bd11f2dda781bb07cc5792fe"
+SRC_URI[md5sum] = "208093dad3f4be9a6fa5d1c4d0e46387"
+SRC_URI[sha256sum] = "49c3b7d053fa23cd59ce5f38a7c5db9b0e873dcbf39fe5e8ae05600339f4d620"
 
 PV = "${KV}+${SRCDATE}"
 PR = "r0"
 
-SRC_URI = "http://dvbstand.com/alphatriplehd/drivers/alphatriple-drivers-${KV}-${GCCREV}-${SRCDATE}.zip"
+SRC_URI = "http://downloads.openpli.org/archive/sab/alphatriple-drivers-${KV}-${GCCREV}-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 
