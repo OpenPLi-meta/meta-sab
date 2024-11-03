@@ -7,9 +7,11 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
 	sab-dvb-modules-${MACHINE} \
-	kernel-vmlinux \
 	enigma2-plugin-extensions-hbbtv-${MACHINE} \
 	"
+# FIXME
+# kernel-vmlinux removed from MACHINE_ESSENTIAL_EXTRA_RDEPENDS!
+# error: nothing provides kernel-vmlinux = 4.1.24-r0 needed by kernel-image
 
 MACHINE_EXTRA_RRECOMMENDS = " \
 	sab-blindscan-utils-${MACHINE} \
