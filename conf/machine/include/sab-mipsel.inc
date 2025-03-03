@@ -7,7 +7,6 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
 	sab-dvb-modules-${MACHINE} \
-	enigma2-plugin-extensions-hbbtv-${MACHINE} \
 	"
 # FIXME
 # kernel-vmlinux removed from MACHINE_ESSENTIAL_EXTRA_RDEPENDS!
@@ -15,6 +14,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
 
 MACHINE_EXTRA_RRECOMMENDS = " \
 	sab-blindscan-utils-${MACHINE} \
+	gstreamer1.0-plugin-dvbmediasink \
 	"
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 \
