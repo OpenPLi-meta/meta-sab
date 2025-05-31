@@ -14,14 +14,14 @@ SRC_URI[sha256sum] = "fec6155b017d8bfc705ff21deee85a21af1dff33282f8f0727536d864a
 
 LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
-RPROVIDES:kernel-image = "kernel-${KERNEL_IMAGETYPE}"
+# By default, kernel.bbclass modifies package names to allow multiple kernels
+# to be installed in parallel. We revert this change and rprovide the versioned
+# package names instead, to allow only one kernel to be installed.
+RPROVIDES:${KERNEL_PACKAGE_NAME}-base = "kernel-${KERNEL_VERSION}"
+RPROVIDES:${KERNEL_PACKAGE_NAME}-image = "kernel-image-${KERNEL_VERSION}"
 
 SRC_URI += "http://downloads.openpli.org/archive/sab/broadmedia-linux-${PV}-${SRC}.tar.xz \
     file://defconfig \
-    file://kernel-add-support-for-gcc6.patch \
-    file://kernel-add-support-for-gcc7.patch \
-    file://kernel-add-support-for-gcc8.patch \
-    file://kernel-add-support-for-gcc9.patch \
     file://0001-Support-TBS-USB-drivers-for-4.1-kernel.patch \
     file://0001-TBS-fixes-for-4.1-kernel.patch \
     file://0001-STV-Add-PLS-support.patch \
@@ -30,6 +30,8 @@ SRC_URI += "http://downloads.openpli.org/archive/sab/broadmedia-linux-${PV}-${SR
     file://0001-stv090x-optimized-TS-sync-control.patch \
     file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
     file://0003-dont-mark-register-as-const.patch \
+    file://fix-never-be-null_outside-array-bounds-gcc-12.patch \
+    file://fix-build-with-binutils-2.41.patch \
     "
 
 S = "${WORKDIR}/linux-${PV}"
@@ -41,7 +43,7 @@ KERNEL_OUTPUT = "vmlinux"
 KERNEL_IMAGETYPE = "vmlinux"
 KERNEL_IMAGEDEST = "tmp"
 
-KERNEL_EXTRA_ARGS = "EXTRA_CFLAGS+=-Wno-attribute-alias EXTRA_CFLAGS+=-Wno-address"
+KERNEL_EXTRA_ARGS = "EXTRA_CFLAGS=-Wno-attribute-alias"
 
 FILES:${KERNEL_PACKAGE_NAME}-image = "/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}.gz"
 
